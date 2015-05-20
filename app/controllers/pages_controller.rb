@@ -21,6 +21,7 @@ class PagesController < ApplicationController
 
 		@tomorrow_pm25_aqi = json[1]["AQI"]
 		@tomorrow_pm25_status = json[1]["Category"]["Name"]
+
 	end	
 
 end
