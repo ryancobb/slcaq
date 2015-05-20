@@ -1,0 +1,43 @@
+* {
+	font-family: "Roboto"
+}
+
+.header div h1 {
+	font-size: 50px;
+	font-weight: 400;
+}
+
+.day p{
+	padding: 0px;
+	margin: 0;
+	border-bottom: 1px solid;
+}
+
+.forecast {
+	margin:  auto;
+	padding: 30px;
+	background-color: #eee;
+}
+
+.forecast h1 {
+	font-weight: 400;
+	font-size: 45px;
+	margin: 10px 0 0;
+}
+
+.forecast h2 {
+	margin: 5px;
+	font-weight: 300;
+}
+
+.footer {
+	margin-top: 30px;
+}
+
+.good {
+	background-color: #D8EFDE;
+}
+
+.bad {
+	background-color: #FFDFDF;
+}
