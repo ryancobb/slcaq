@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20150527025456) do
 
   create_table "observations", force: :cascade do |t|
     t.date     "dateObserved"
-    t.time     "hourObserved"
+    t.integer     "hourObserved"
     t.string   "localTimeZone"
     t.string   "reportingArea"
     t.string   "stateCode"
