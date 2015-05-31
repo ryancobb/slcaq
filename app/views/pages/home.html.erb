@@ -11,15 +11,15 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="<%= 'good' if @o3_status == "Good" %>  forecast O3 col-md-6 text-center">
+		<div class="<%= 'good' if @o3_status == "Good" %> forecast col-md-6 text-center">
 			<h1>O3</h1>
 			<h2><%= @o3_status %></h2>
 			<p>AQI: <%= @o3_aqi %></p>
 		</div>
-		<div class="bad forecast PM25 col-md-6 text-center">
+		<div class="<%= 'good' if @o3_status == "Good" %> forecast col-md-6 text-center">
 			<h1>PM25</h1>
-			<h2>bad<%= @pm25_status %></h2>
-			<p>AQI: <%= @pm25_AQI %></p>
+			<h2><%= @pm25_status %></h2>
+			<p>AQI: <%= @pm25_aqi %></p>
 		</div>
 	</div>
 	<div class="row">

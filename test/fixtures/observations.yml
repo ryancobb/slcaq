@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dateObserved: 2015-05-26
+  hourObserved: 2015-05-26 20:54:56
+  localTimeZone: MyString
+  reportingArea: MyString
+  stateCode: MyString
+  latitude: 1.5
+  longitude: 1.5
+  parameterName: MyString
+  aqi: 1
+  categoryNumber: 
+  categoryName: MyString
+
+two:
+  dateObserved: 2015-05-26
+  hourObserved: 2015-05-26 20:54:56
+  localTimeZone: MyString
+  reportingArea: MyString
+  stateCode: MyString
+  latitude: 1.5
+  longitude: 1.5
+  parameterName: MyString
+  aqi: 1
+  categoryNumber: 
+  categoryName: MyString

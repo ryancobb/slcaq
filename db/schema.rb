@@ -11,6 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150527025456) do
+
+  create_table "observations", force: :cascade do |t|
+    t.date     "dateObserved"
+    t.time     "hourObserved"
+    t.string   "localTimeZone"
+    t.string   "reportingArea"
+    t.string   "stateCode"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "parameterName"
+    t.integer  "aqi"
+    t.integer  "categoryNumber"
+    t.string   "categoryName"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
 end
