@@ -2,7 +2,7 @@ class CreateObservations < ActiveRecord::Migration
   def change
     create_table :observations do |t|
       t.date :dateObserved
-      t.time :hourObserved
+      t.integer :hourObserved
       t.string :localTimeZone
       t.string :reportingArea
       t.string :stateCode
