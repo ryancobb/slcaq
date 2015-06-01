@@ -22,25 +22,7 @@
 			<p>AQI: <%= @pm25_aqi %></p>
 		</div>
 	</div>
-	<div class="row">
-		<div class="day">
-			<p>Tomorrow</p>
-		</div>
-	</div>
 	
-	<div class="row">
-		<div class="forecast O3 col-md-6 text-center">
-			<h1>O3</h1>
-			<h2><%= @tomorrow_o3_status %></h2>
-			<p>AQI: <%= @tomorrow_o3_aqi %></p>
-		</div>
-		<div class="forecast PM25 col-md-6 text-center">
-			<h1>PM25</h1>
-			<h2><%= @tomorrow_pm25_status %></h2>
-			<p>AQI: <%= @tomorrow_pm25_AQI %></p>
-		</div>
-	</div>
-
 	<div class="row">
   		<%= line_chart [
   				{name: "O3", data: Observation.where(parameterName: "O3").group_by_hour(:created_at).maximum(:aqi)},
