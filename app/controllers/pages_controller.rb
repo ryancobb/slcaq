@@ -2,8 +2,6 @@ class PagesController < ApplicationController
 
 	def home
 
-		#updateAirNow
-
 		o3 = Observation.where(parameterName: 'O3').order(:updated_at).last
 
 		@o3_status = o3.categoryName
