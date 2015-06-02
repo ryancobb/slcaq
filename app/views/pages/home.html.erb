@@ -25,9 +25,10 @@
 	
 	<div class="row">
   		<%= line_chart [
-  				{name: "O3", data: Observation.where(parameterName: "O3").group_by_hour(:created_at, range: 1.weeks.ago.midnight..Time.now).maximum(:aqi)},
-  				{name: "PM2.5", data: Observation.where(parameterName: "PM2.5").group_by_hour(:created_at, range: 1.weeks.ago.midnight..Time.now).maximum(:aqi)}
-  			]
+  				{name: "O3", data: @o3_arr},
+  				{name: "PM2.5", data: @pm25_arr}
+  			],
+  			library: {explorer: {}} 
   			%>
 	</div>
 
