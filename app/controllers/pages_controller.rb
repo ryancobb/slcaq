@@ -30,4 +30,21 @@ class PagesController < ApplicationController
 
 	end	
 
+	def api
+		observations = Observation.where(created_at: Date.today-7..Date.today+2)
+
+		observations = observations.map { |obs| 
+			{
+				:dt => obs.date_time,
+				obs.parameterName.to_sym => obs.aqi,
+				:status => obs.categoryName
+			}
+		}
+
+		@observations = observations.group_by {|obs| obs[:dt]}.map{|_, hs| hs.reduce(:merge)}
+
+		render json: @observations
+	end
+
+
 end
