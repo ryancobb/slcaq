@@ -23,14 +23,7 @@
 		</div>
 	</div>
 	
-	<div class="row">
-  		<%= line_chart [
-  				{name: "O3", data: @o3_arr},
-  				{name: "PM2.5", data: @pm25_arr}
-  			],
-  			library: {explorer: {}} 
-  			%>
-	</div>
+	<%= content_tag :div, "", id: "aqi_chart", data: {aqi: @observations} %>
 
 </div>
 

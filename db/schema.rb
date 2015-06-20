@@ -13,9 +13,12 @@
 
 ActiveRecord::Schema.define(version: 20150527025456) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "observations", force: :cascade do |t|
     t.date     "dateObserved"
-    t.integer     "hourObserved"
+    t.integer  "hourObserved"
     t.string   "localTimeZone"
     t.string   "reportingArea"
     t.string   "stateCode"
