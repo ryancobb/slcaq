@@ -35,9 +35,25 @@
 }
 
 .good {
-	background-color: #D8EFDE;
+	background-color: rgba(0, 228, 0, .25)
 }
 
-.bad {
-	background-color: #FFDFDF;
+.moderate {
+	background-color: rgba(255, 255, 0, 0.25);
+}
+
+.UFSG {
+	background-color: rgba(255, 126, 0, 0.25);
+}
+
+.unhealthy {
+	background-color: rgba(255, 0, 0, 0.25);
+}
+
+.veryunhealthy {
+	background-color: rgba(153, 0, 76, 0.25);
+}
+
+.hazardous {
+	background-color: rgba(126, 0, 35, 0.25);
 }
