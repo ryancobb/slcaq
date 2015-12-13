@@ -15,12 +15,12 @@
 	<div class="row">
 		<div class="<%= @o3CSSClass %> forecast col-xs-6 text-center">
 			<h1>O3</h1>
-			<h2><%= @o3_status %></h2>
+			<h2><%= @o3_status ? @o3_status : 'N/A' %></h2>
 			<p>AQI: <%= @o3_aqi %></p>
 		</div>
 		<div class="<%= @pm25CSSClass %> forecast col-xs-6 text-center">
 			<h1>PM2.5</h1>
-			<h2><%= @pm25_status %></h2>
+			<h2><%= @pm25_status ? @pm25_status : 'N/A' %></h2>
 			<p>AQI: <%= @pm25_aqi %></p>
 		</div>
 	</div>

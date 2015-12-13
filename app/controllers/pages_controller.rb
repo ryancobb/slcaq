@@ -16,17 +16,20 @@ class PagesController < ApplicationController
 
 		o3 = Observation.where(parameterName: 'O3').last
 
-		@o3_status = o3.categoryName		
-		@o3_aqi = o3.aqi
+		if o3.dateObserved == Date.today
+			@o3_status = o3.categoryName
+			@o3_aqi = o3.aqi
+		end
 
-		@o3CSSClass = self.classConversion(@o3_status)
+		@o3CSSClass = classConversion(@o3_status)
 
 		pm25 = Observation.where(parameterName: 'PM2.5').last
+		if pm25.dateObserved == Date.today
+			@pm25_status = pm25.categoryName
+			@pm25_aqi = pm25.aqi
+		end
 
-		@pm25_status = pm25.categoryName
-		@pm25_aqi = pm25.aqi
-
-		@pm25CSSClass = self.classConversion(@pm25_status)
+		@pm25CSSClass = classConversion(@pm25_status)
 
 	end	
 
