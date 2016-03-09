@@ -4,7 +4,7 @@ class PagesController < ApplicationController
 
 		observations = Observation.where(created_at: Date.today-7..Date.today+2)
 
-		observations = observations.map { |obs| 
+		observations = observations.map { |obs|
 			{
 				:dt => obs.date_time,
 				obs.parameterName.to_sym => obs.aqi,
@@ -16,37 +16,20 @@ class PagesController < ApplicationController
 
 		o3 = Observation.where(parameterName: 'O3').last
 
-		if o3.dateObserved == Date.today
-			@o3_status = o3.categoryName
-			@o3_aqi = o3.aqi
-		end
+		@o3_status = o3.categoryName
+		@o3_aqi = o3.aqi
+		@o3_observed = o3.date_time
 
 		@o3CSSClass = classConversion(@o3_status)
 
 		pm25 = Observation.where(parameterName: 'PM2.5').last
-		if pm25.dateObserved == Date.today
-			@pm25_status = pm25.categoryName
-			@pm25_aqi = pm25.aqi
-		end
+
+		@pm25_status = pm25.categoryName
+		@pm25_aqi = pm25.aqi
+		@pm25_observed = pm25.date_time
 
 		@pm25CSSClass = classConversion(@pm25_status)
 
-	end	
-
-	def api
-		observations = Observation.where(created_at: Date.today-7..Date.today+2)
-
-		observations = observations.map { |obs| 
-			{
-				:dt => obs.date_time,
-				obs.parameterName.to_sym => obs.aqi,
-				:status => obs.categoryName
-			}
-		}
-
-		@observations = observations.group_by {|obs| obs[:dt]}.map{|_, hs| hs.reduce(:merge)}
-
-		render json: @observations
 	end
 
 	def classConversion(categoryName)

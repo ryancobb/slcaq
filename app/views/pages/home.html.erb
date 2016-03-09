@@ -17,18 +17,20 @@
 			<h1>O3</h1>
 			<h2><%= @o3_status ? @o3_status : 'N/A' %></h2>
 			<p>AQI: <%= @o3_aqi %></p>
+			<p><%= time_ago_in_words(@o3_observed) %> ago</p>
 		</div>
 		<div class="<%= @pm25CSSClass %> forecast col-xs-6 text-center">
 			<h1>PM2.5</h1>
 			<h2><%= @pm25_status ? @pm25_status : 'N/A' %></h2>
 			<p>AQI: <%= @pm25_aqi %></p>
+			<p><%= time_ago_in_words(@pm25_observed) %> ago</p>
 		</div>
 	</div>
 
 	<div class="row">
 		<%= content_tag :div, "", class: '', id: "aqi_chart", data: {aqi: @observations} %>
 	</div>
-		
+
 
 	<div class="lookup">
 		<div class="row hazardous">
@@ -40,7 +42,7 @@
 			<div class="col-xs-6">Very Unhealthy</div>
 		</div>
 		<div class="row unhealthy">
-			<div class="col-xs-6 text-right">151-200</div>	
+			<div class="col-xs-6 text-right">151-200</div>
 			<div class="col-xs-6">Unhealthy</div>
 		</div>
 		<div class="row UFSG">
@@ -51,7 +53,7 @@
 		<div class= "row moderate">
 			<div class="col-xs-6 text-right">51-100</div>
 			<div class="col-xs-6">Moderate</div>
-		</div>	
+		</div>
 		<div class="row good">
 			<div class="col-xs-6 text-right">0 - 50</div>
 			<div class="col-xs-6">Good</div>
